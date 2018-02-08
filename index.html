@@ -1,0 +1,1346 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AllezCine </title>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="smoothscroll.js"></script>
+  <!-- Thanks to kryogenix.org for the smoothscroll script ! -->
+  <link rel="stylesheet" href="age-verification.css">
+  <script src="age-verification.js"></script>
+
+</head>
+
+<body>
+
+
+  <!--NAVBAR -->
+
+    <div class="jumbonavbar">
+      <nav class="navbar navbar-dark  navbar-collapse-sm navbar-expand-lg d-flex align-items-center" id="main-nav">
+        <a class="navbar-brand" href="#top-page">
+        <span class="primaryColor">Allez</span>Cine!</a>
+
+        <!-- Toggle button for responsive -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#shopMenu" aria-controls="shopMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="shopMenu">
+          <ul class="navbar-nav mr-auto d-flex justify-content-around">
+            <li class="nav-item">
+              <a class="nav-link" href="#top-page" id="homeButton"><span class="primaryColor">Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#featured-movies" id="featuredMoviesButton">Featured Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#featured-tvshows" id="featuredSeriesButton">Featured TV Series</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#shop-movies" id="shopMoviesButton">Shop Movies</a>
+            </li>
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="#contact" id="contactUsButton">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <input class="form-control searchBar" type="search" placeholder="Search" aria-label="Search" id="searchBar">
+            <div class="input-group-append">
+            </div>
+          </form>
+        </div>
+      </nav>
+      <!--NAVBAR END -->
+
+
+      <!--JUMBOTRON CAROUSEL -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-caption">
+          <h2>LATEST <span class="primaryColor">ON</span>LINE <span class="primaryColor">MO</span>VIES</h2>
+          <h5>IN SPACE NOONE CAN HEAR YOU SCREAM</h5>
+          <button type="button" name="button" class="redbutton">WATCH TRAILER</button>
+        </div>
+        <div class="carousel-inner jumbotronPic">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/me-before-you.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/popcorn.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/cineintro.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+      </div>
+
+
+
+      <!--JUMBOTRON CAROUSEL END -->
+
+
+      <!-- <div class="row bg-danger">
+        <div class="col-sm" class="redbar">
+          &#9990; (+000) 009 455 4088
+          <button type="button" name="button" class="accountbuttons" id="loginButton">Login</button>
+
+        </div>
+      </div> -->
+
+        <div class="row bg-danger bar">
+      <span><i class="fa fa-phone" aria-hidden="true"></i>(+000) 009 455 4088</span>
+      <button type="button" class="btn btn-dark" data-target="#loginModal" data-toggle="modal"  id="login">Login</button>
+      <button type="button" class="btn btn-dark" data-target="#registerModal" data-toggle="modal"  id="register">Register</button>
+    </div> 
+    </div>
+
+    <div class="modal fade" id="ageWarning" tabindex="-1" role="dialog" aria-labelledby="Checking the age" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ageTitle">Age verification.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <input type="date" id="birthInput">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="ageVerif">Check</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Connexion on AllezCine" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="connectTitle">Connexion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="connectForm">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password">
+            <br>
+            <input type="checkbox"><span>Stay logged in.</span> <a href="#">Forgot your password?</a>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal"id="newAccount">New Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Create a new account" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerTitle">New Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <label for="e-mail">E-mail</label>
+            <input type="email" name="e-mail" id="e-mail">
+            <label for="password">Password</label>
+            <input type="password" name="setPassword" id="setPassword">
+            <label for="confirmPass">Confirm Password</label>
+            <input type="password" name="confirmPass" id="confirmPass">
+            <br>
+            <input type="checkbox"><span>Accept the terms of use.</span>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <!--JUMBONAV END -->
+
+    <!-- Social -->
+    <div class="general_social_icons">
+      <nav class="social">
+        <ul>
+          <li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+          <li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+          <li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+          <li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Social -->
+
+
+ <div class="cooks"><div "d-flex align-content-center justify-content-center">
+    <p>This site uses cookies. You have been warned. cookie cookie cookie <button id="cookie">OK</button></p>
+  </div>
+  </div>
+
+  <section class="container">
+    <div class="changing d-flex justify-content-center align-content-center flex-wrap">
+      <img id="thisImg"src="img/Survivestyle5-2004-comedie.jpg" alt="">
+        <img id="thisImg1"src="img/lepatientanglais-1996-dramatique.jpg" alt="">
+
+          <img id="thisImg2"src="img/hostel-2005-thriller.jpg" alt="">
+
+            <img id="thisImg3"src="img/RushHour2007Comedy.jpg" alt="">
+
+              <img id="thisImg4"src="img/starwarsempire-1980-scifi.jpg" alt="">
+    </div>
+  </section>
+
+  
+  <section class="container featured">
+    <h2 id="featured-movies"class="contentTitle"><span>&nbsp;</span>Featured moviez</h2>
+    <div class="selectionGenre row">
+     <button id="allMovie" class="active col-12 col-sm-6 col-md-4 col-lg-1">All</id>
+     <button id="comedyMovie" class="col-12 col-sm-6 col-md-4 col-lg-1">Comedy</button>
+     <button id="dramaMovie"class="col-12 col-sm-6 col-md-4 col-lg-1">Drama</button>
+     <button id="scifiMovie"class="col-12 col-sm-6 col-md-4 col-lg-1">Sci-fi</button>
+     <button id="thrillerMovie"class="col-12 col-sm-6 col-md-4 col-lg-1">Thriller</button>
+     <button id="adventureMovie"class="col-12 col-sm-6 col-md-4 col-lg-2 ">Adventure</button>
+    </div>
+    <div class="row">
+
+      <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class=" template2 d-flex text-center flex-column comedy">
+    <img src="img/batmanmovie-2017-comedie.jpg" alt="Batman"data-target="#batman" data-toggle="modal">
+    <h5 class="movieTitle"data-toggle="modal" data-target="#batman">Batman</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2017</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="movie thrillerMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/hostel-2005-thriller.jpg"data-remote="index.html"data-target="#hostel" data-toggle="modal" alt="Hostel">
+    <h5 data-target="#hostel" data-toggle="modal"class="movieTitle">Hostel</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">2005</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie scifiMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/inception-2010-scifi.jpg"data-target="#inception" data-toggle="modal" alt="Inception">
+    <h5 class="movieTitle"data-target="#inception" data-toggle="modal">Inception</h5>
+    <div class="d-flex justify-content-between">
+      <p>Sci-Fi</p>
+      <p class="bold">2010</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/intouchables-2011-comedie.jpg"data-target="#intouchables"data-toggle="modal" alt="Intouchables">
+    <h5 class="movieTitle"data-target="#intouchables"data-toggle="modal">Intouchables</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2011</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie dramaMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/lepatientanglais-1996-dramatique.jpg" alt="The English Patient" data-target="#englishpatient"data-toggle="modal">
+    <h5 class="movieTitle" data-target="#englishpatient"data-toggle="modal">The English Patient</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">1996</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie adventureMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/lesdeuxtours-2002-aventure.jpg" alt="LOTR Two towers"data-target="#twotowers"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#twotowers"data-toggle="modal">Lotr Two towers</h5>
+    <div class="d-flex justify-content-between">
+      <p>Adventure</p>
+      <p class="bold">2002</p>
+    </div>
+  </div>
+</div>
+    
+
+      <div class="movie thrillerMovie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/seven-1995-thriller.jpg" alt="Seven"data-target="#seven"tagat-toggle="modal">
+    <h5 class="img/movieTitle"data-target="#seven"tagat-toggle="modal">Seven</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">1995</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="movie thrillerMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/shutterisland-2010-thriller.jpg" alt="Shutter Island"data-target="#shutter"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#shutter"data-toggle="modal">Shutter Island</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">2010</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie scifiMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/starwarsempire-1980-scifi.jpg" alt="Star wars"data-target="#starwars"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#starwars"data-toggle="modal">Star wars V</h5>
+    <div class="d-flex justify-content-between">
+      <p>Sci-fi</p>
+      <p class="bold">1980</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/Survivestyle5-2004-comedie.jpg" alt="Survive style 5"data-target="#survive"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#survive"data-toggle="modal">Survive style 5</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2004</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/swissarmyman-2016-comedie.jpg" alt="Swiss army man"data-target="#swiss" data-toggle="modal">
+    <h5 class="movieTitle"data-target="#swiss" data-toggle="modal">Swiss Army Man</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2016</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie dramaMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/thefall-2006-dramatique.jpg" alt="The Fall"data-target="#fall"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#fall"data-toggle="modal">The Fall</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">2006</p>
+    </div>
+  </div>
+</div>
+
+      <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/WhatWeDoInTheShadows-2014-comedie.jpg" alt="What we do in the shadows"data-target="#whatwedo"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#whatwedo"data-toggle="modal">What we do in the shadows</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2014</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/zoolander-2001-comedie.jpg" alt="Zoolander"data-target="#zoolander"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#zoolander"data-toggle="modal">Zoolander</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2001</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie dramaMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/MagnoliaDrama1999.jpg" alt="Magnolia"data-target="#magnolia"data-toggle="modal">
+    <h5 class="movieTitle"data-target="#magnolia"data-toggle="modal">Magnolia</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">1999</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie comedyMovie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/RushHour2007Comedy.jpg" alt="Rush hour"data-target="rushhour"data-toggle"modal">
+    <h5 class="movieTitle"data-target="rushhour"data-toggle"modal">Rush Hour 3</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2007</p>
+    </div>
+  </div>
+</div>
+
+    
+    </div> 
+
+    <button id="loadMore" class="actionButton">Show moar</button>
+
+    <!-- End featured movies, start featured series -->
+    <!-- End featured movies, start featured series -->
+    <h2 id="featured-tvshows"class="contentTitle"><span>&nbsp;</span>Featured seriez</h2>
+    <div class="selectionGenre row">
+     <button id="allserie" class="active col-12 col-sm-6 col-md-4 col-lg-1">All</id>
+     <button id="comedyserie" class="col-12 col-sm-6 col-md-4 col-lg-1">Comedy</button>
+     <button id="dramaserie"class="col-12 col-sm-6 col-md-4 col-lg-1">Drama</button>
+     <button id="scifiserie"class="col-12 col-sm-6 col-md-4 col-lg-1">Sci-fi</button>
+     <button id="thrillerserie"class="col-12 col-sm-6 col-md-4 col-lg-1">Thriller</button>
+     <button id="adventureserie"class="col-12 col-sm-6 col-md-4 col-lg-2 ">Adventure</button>
+    </div>
+    <div class="row">
+
+      <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class=" template2 d-flex text-center flex-column comedy">
+    <img src="img/batmanmovie-2017-comedie.jpg" alt="Batman"data-target="#batman" data-toggle="modal">
+    <h5 class="serieTitle"data-toggle="modal" data-target="#batman">Batman</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2017</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="serie thrillerserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/hostel-2005-thriller.jpg"data-remote="index.html"data-target="#hostel" data-toggle="modal" alt="Hostel">
+    <h5 data-target="#hostel" data-toggle="modal"class="serieTitle">Hostel</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">2005</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie scifiserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/inception-2010-scifi.jpg"data-target="#inception" data-toggle="modal" alt="Inception">
+    <h5 class="serieTitle"data-target="#inception" data-toggle="modal">Inception</h5>
+    <div class="d-flex justify-content-between">
+      <p>Sci-Fi</p>
+      <p class="bold">2010</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/intouchables-2011-comedie.jpg"data-target="#intouchables"data-toggle="modal" alt="Intouchables">
+    <h5 class="serieTitle"data-target="#intouchables"data-toggle="modal">Intouchables</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2011</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie dramaserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/lepatientanglais-1996-dramatique.jpg" alt="The English Patient" data-target="#englishpatient"data-toggle="modal">
+    <h5 class="serieTitle" data-target="#englishpatient"data-toggle="modal">The English Patient</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">1996</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie adventureserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/lesdeuxtours-2002-aventure.jpg" alt="LOTR Two towers"data-target="#twotowers"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#twotowers"data-toggle="modal">Lotr Two towers</h5>
+    <div class="d-flex justify-content-between">
+      <p>Adventure</p>
+      <p class="bold">2002</p>
+    </div>
+  </div>
+</div>
+    
+
+      <div class="serie thrillerserie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/seven-1995-thriller.jpg" alt="Seven"data-target="#seven"tagat-toggle="modal">
+    <h5 class="img/serieTitle"data-target="#seven"tagat-toggle="modal">Seven</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">1995</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="serie thrillerserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/shutterisland-2010-thriller.jpg" alt="Shutter Island"data-target="#shutter"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#shutter"data-toggle="modal">Shutter Island</h5>
+    <div class="d-flex justify-content-between">
+      <p>Thriller</p>
+      <p class="bold">2010</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie scifiserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/starwarsempire-1980-scifi.jpg" alt="Star wars"data-target="#starwars"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#starwars"data-toggle="modal">Star wars V</h5>
+    <div class="d-flex justify-content-between">
+      <p>Sci-fi</p>
+      <p class="bold">1980</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/Survivestyle5-2004-comedie.jpg" alt="Survive style 5"data-target="#survive"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#survive"data-toggle="modal">Survive style 5</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2004</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/swissarmyman-2016-comedie.jpg" alt="Swiss army man"data-target="#swiss" data-toggle="modal">
+    <h5 class="serieTitle"data-target="#swiss" data-toggle="modal">Swiss Army Man</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2016</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie dramaserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/thefall-2006-dramatique.jpg" alt="The Fall"data-target="#fall"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#fall"data-toggle="modal">The Fall</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">2006</p>
+    </div>
+  </div>
+</div>
+
+      <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/WhatWeDoInTheShadows-2014-comedie.jpg" alt="What we do in the shadows"data-target="#whatwedo"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#whatwedo"data-toggle="modal">What we do in the shadows</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2014</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/zoolander-2001-comedie.jpg" alt="Zoolander"data-target="#zoolander"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#zoolander"data-toggle="modal">Zoolander</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2001</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie dramaserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/MagnoliaDrama1999.jpg" alt="Magnolia"data-target="#magnolia"data-toggle="modal">
+    <h5 class="serieTitle"data-target="#magnolia"data-toggle="modal">Magnolia</h5>
+    <div class="d-flex justify-content-between">
+      <p>Drama</p>
+      <p class="bold">1999</p>
+    </div>
+  </div>
+</div>
+
+  <div class="serie comedyserie col-8 col-sm-5 col-md-4 col-lg-2">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/RushHour2007Comedy.jpg" alt="Rush hour"data-target="rushhour"data-toggle"modal">
+    <h5 class="serieTitle"data-target="rushhour"data-toggle"modal">Rush Hour 3</h5>
+    <div class="d-flex justify-content-between">
+      <p>Comedy</p>
+      <p class="bold">2007</p>
+    </div>
+  </div>
+</div>
+
+    
+    </div> 
+
+    <button id="loadMore2" class="actionButton">Show moar</button>
+    <!-- end featured series -->
+  </section>
+
+
+<div class="container">
+  <h1 id="shop-movies"class="contentTitle"><span>&nbsp;</span>SHOP MOVIES</h1>
+  <button id="left">&lt;</button>
+  <button id="right">&gt;</button>
+</div>
+<br>
+
+<section class="container shop">
+   
+    <div class="row">
+
+       <div class="col-8">
+       <div class="row itemz">
+        <div class="movie col-4">
+        <div class=" template2 d-flex text-center flex-column comedy">
+       <img src="img/guide.jpg" alt=""data-remote="modals.html" href="modals.html"data-target="#batman" data-toggle="modal">
+        <h5 class="movieTitle"data-toggle="modal" data-target="#batman">The Hitchhiker's Guide to the Galaxy</h5>
+        <div class="d-flex justify-content-between">
+          <p class="bold">2005 15 euro</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/beasts.jpg"data-remote="index.html"data-target="#hostel" data-toggle="modal" alt="">
+    <h5 data-remote="modals.html"data-target="#hostel" data-toggle="modal"class="movieTitle">Fantastic Beasts and Where to Find Them</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2016 15 euro</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/inception.jpg">
+    <h5 class="movieTitle">Inception</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2010</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/walle.jpg">
+    <h5 class="movieTitle">Wall-E</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2008</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/storks.jpg">
+    <h5 class="movieTitle">Stork</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2016 18 Euro</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/TheGreen.jpg">
+    <h5 class="movieTitle">The Green Mile</h5>
+    <div class="d-flex justify-content-between">
+     
+      <p class="bold">1999</p>
+    </div>
+  </div>
+</div>
+    
+
+      <div class="movie col-4">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/godfather.jpg" alt="Seven">
+    <h5 class="img/movieTitle">The Godfather</h5>
+    <div class="d-flex justify-content-between">
+     
+      <p class="bold">1975</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/billboards.jpg">
+    <h5 class="movieTitle">Three Billboards Outside Ebbing, Missouri </h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2017</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/fightClub.jpg">
+    <h5 class="movieTitle">Fight Club</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">1999</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/pulp.jpg" alt="Survive style 5">
+    <h5 class="movieTitle">Pulp Fiction</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">1994</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie  col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/KillBill.jpg" alt="Swiss army man">
+    <h5 class="movieTitle">Kill Bill</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">2011</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/orange.jpg" alt="The Fall">
+    <h5 class="movieTitle">A Clockwork Orange</h5>
+    <div class="d-flex justify-content-between">
+      <p class="bold">1971</p>
+    </div>
+  </div>
+</div>
+    
+  
+      
+
+     <div class="movie  col-4">
+      <div class="template  d-flex text-center flex-column ">
+    <img src="img/beauty.jpg">
+    <h5 class="movieTitle">Stealing Beauty</h5>
+    <div class="d-flex justify-content-between">
+      
+      <p class="bold">1996</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="movie  col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/zootopia.jpg">
+    <h5 class="movieTitle">Zootopia</h5>
+    <div class="d-flex justify-content-between">
+      <p class="bold">2016</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie  col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/dolce.jpg" alt="Magnolia">
+    <h5 class="movieTitle">La Dolce Vita</h5>
+    <div class="d-flex justify-content-between">
+      <p class="bold">1960</p>
+    </div>
+  </div>
+</div>
+
+  <div class="movie  col-4">
+  <div class="template  d-flex text-center flex-column ">
+    <img src="img/seal.jpg" alt="Rush hour">
+    <h5 class="movieTitle">The Seventh Seal</h5>
+    <div class="d-flex justify-content-between">
+     
+      <p class="bold">1957</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="col-4">
+  <iframe width="420" height="345" src="https://www.youtube.com/embed/Vso5o11LuGU">
+    <br>
+    <h2>Fantastic Beasts and where to find them</h2>
+    <p>Fantasy movie</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam animi optio eligendi ducimus eum architecto eos excepturi dicta ratione sint deserunt vero similique esse tempora dignissimos, magni nulla, quisquam numquam!</p>
+</iframe>
+</div>
+</div>
+
+</section>
+
+
+
+
+
+  
+
+ <!-- contact us  -->
+
+<div class="container d-flex justify-content-around align-items-center">
+  <div>
+<div class="contactUs contentTitle" id="contact"><span>&nbsp;</span>contact us</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Click Here
+</button>
+</div>
+
+  <div class="d-flex justify-content-end" id="contactUsMap">
+
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.2337820363596!2d4.355096315871095!3d50.845354979531905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c47fd1d960c1%3A0xcbd18b1ea8412062!2sBeCode!5e0!3m2!1snl!2sbe!4v1517578307500" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="contactForm">
+  <form class="grid-container" action="#">
+  
+    <input id="FirstNameInput" placeholder="Name" type="text" required/>
+    <input id="LastNameInput" placeholder="Last Name" name="text" required/>
+    <input id="EmailInput" placeholder="Email" name="text" required/>
+    <input id="subjecttInput" placeholder="Subject" name="text" required/>
+    <textarea id="commentInput" class="grid-item item1" placeholder="Comment"></textarea>
+    <!-- <input class="grid-item item2" type="button" value="send message" />
+  </form> -->
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+  
+ 
+  
+
+
+<!-- footer -->
+<footer>
+  <div>
+    <h3>SUBSCRIBE TO US</h3>
+    <div class="d-flex justify-content-center">
+    <form method="post">
+      <input type="email">
+      <button type="button" class="btn btn-danger rounded-0">SUBSCRIBE</button>
+    </form>
+  </div>
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <h4>RELEASE</h4>
+        <hr>
+        <ul>
+          <li><a href="">2016</a></li>
+          <li><a href="">2015</a></li>
+          <li><a href="">2014</a></li>
+          <li><a href="">2013</a></li>
+          <li><a href="">2012</a></li>
+          <li><a href="">2011</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-2">
+        <h4>MOVIES</h4>
+        <hr>
+        <ul>
+          <li><a href="">ADVENTURES</a></li>
+          <li><a href="">COMEDY</a></li>
+          <li><a href="">FANTASY</a></li>
+          <li><a href="">ACTION</a></li>
+          <li><a href="">MOVIES</a></li>
+          <li><a href="">HORROR</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-2">
+        <h4>REVIEW MOVIES</h4>
+        <hr>
+        <span class="badge badge-secondary">Comedy</span>
+        <span class="badge badge-secondary">Horror</span>
+        <span class="badge badge-secondary">Historical</span>
+        <span class="badge badge-secondary">Romantic</span>
+        <span class="badge badge-secondary">Love</span>
+        <span class="badge badge-secondary">Action</span>
+        <span class="badge badge-secondary">Crime</span>
+        <span class="badge badge-secondary">Fantasy</span>
+        <span class="badge badge-secondary">Mystery</span>
+        <span class="badge badge-secondary">Sci-Fi</span>
+        <span class="badge badge-secondary">Social</span>
+        <span class="badge badge-secondary">Thriller</span>
+        <span class="badge badge-secondary">Western</span>
+        <span class="badge badge-secondary">Drama</span>
+        <span class="badge badge-secondary">Reviews</span>
+      </div>
+      <div class="col-12 col-md-2">
+        <h4>LATEST MOVIES</h4>
+        <hr>
+        <div class="row">
+          <div class="col-5">
+            <img src="https://data.whicdn.com/images/257264172/superthumb.jpg" width="100" height="60"></img>
+          </div>
+          <div class="col-7 text-secondary">All about unicorns</div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img src="https://data.whicdn.com/images/257264172/superthumb.jpg" width="100" height="60"></img>
+          </div>
+          <div class="col-7 text-secondary">All about unicorns</div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img src="https://data.whicdn.com/images/257264172/superthumb.jpg" width="100" height="60"></img>
+          </div>
+          <div class="col-7 text-secondary">All about unicorns</div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <img src="https://data.whicdn.com/images/257264172/superthumb.jpg" width="100" height="60"></img>
+          </div>
+          <div class="col-7 text-secondary">All about unicorns</div>
+        </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <h4><span style="color:red">ALLEZ</span>CINE!</h4>
+          <hr class="bg-secondary">
+             <div id="footerAllezcine">
+                 <div class="d-flex unicorn">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+              </div>
+              <div class="d-flex unicorn">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+                <img src="https://data.whicdn.com/images/257264172/superthumb.jpg">
+              </div>
+           
+        </div>
+      </div>
+    </div>
+        <hr>
+        <hr>
+        <!-- scroll to Top -->
+
+    <div  >
+      <button id="toTop"class="btn btn-outline-danger rounded-circle"><i class="fas fa-arrow-up"></i></button>
+    </div>
+
+        <div class="d-flex flex-column">
+        <div class="social">
+        <!-- <h5>CONNECT US</h5> -->
+         </div>
+         <div class="socialcont">
+          <div class="socialMedia">
+            <i class="fab fa-facebook-square"></i>
+          </div>
+          <div class="socialMedia">
+           <i class="fab fa-twitter"></i>
+          </div>
+          <div class="socialMedia">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <div class="socialMedia">
+             <i class="fab fa-youtube"></i>
+          </div>
+          <div class="socialMedia">
+            <i class="fab fa-google-plus-g"></i>
+          </div>
+            </div>
+           </div> 
+        
+</footer>
+
+
+
+
+
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4yRVtSk_-DxYyHeeIaVPYpO6CE4sAlqc&callback=initMap">
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Modal section -->
+  <section>
+    
+<div class="modal" id="batman" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Batman 2017 movie</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kvgHOAOiAuY?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>A cooler-than-ever Bruce Wayne must deal with the usual suspects as they plan to rule Gotham City, while discovering that he has accidentally adopted a teenage orphan who wishes to become his sidekick.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="inception" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Batman 2017 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xitHF0IPJSQ" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <p>A thief, who steals corporate secrets through the use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="hostel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Hostel 2005 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4d5_lrn9v-g?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>Three backpackers head to a Slovak city that promises to meet their hedonistic expectations, with no idea of the hell that awaits them.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="intouchables" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Intouchables  2011 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EsaX5kltRcA?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="englishpatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>The Englush patient 1996 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Xk_LRcOFT0c?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>
+      At the close of WWII, a young nurse tends to a badly-burned plane crash victim. His past is shown in flashbacks, revealing an involvement in a fateful love affair.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="twotowers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>LOTR:Two towers 2002 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LbfMDwc4azU?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- top 6 end -->
+<div class="modal" id="seven" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Se7en 1995 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/znmZoVkCjpI?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="shutter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Shutter Island  2010 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YDGldPitxic?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="starwars" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>SW: The empire strikes back 1980 movie</h2>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/JNwNXF9Y6kY?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <p>After the rebels are overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda. His friends accept shelter from a questionable ally as Darth Vader hunts them in a plan to capture Luke.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="survive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Survive style 5 2004 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LEH7nDkiPEk?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>Five bizarre stories with no apparent connection to one and other eventually become intertwined, resulting in surreal circumstances.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="swiss" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Swiss army man 2016 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yrK1f4TsQfM?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>A hopeless man stranded on a deserted island befriends a dead body and together they go on a surreal journey to get home.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="fall" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>The Fall 2006 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qNGqTltN-7M?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>In a hospital on the outskirts of 1920s Los Angeles, an injured stuntman begins to tell a fellow patient, a little girl with a broken arm, a fantastic story of five mythical heroes. Thanks to his fractured state of mind and her vivid imagination, the line between fiction and reality blurs as the tale advances.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="whatwedo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>What we do in the shadows 2014 movie</h2>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/IAZEWtyhpes?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>Viago, Deacon, and Vladislav are vampires who are finding that modern life has them struggling with the mundane - like paying rent, keeping up with the chore wheel, trying to get into nightclubs, and overcoming flatmate conflicts.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="zoolander" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Zoolander 2001 movie</h2>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/YtQq0T3ExLs?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>At the end of his career, a clueless fashion model is brainwashed to kill the Prime Minister of Malaysia.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="magnolia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Magnolia 1999 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5_IYTdrQVGY?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>An epic mosaic of interrelated characters in search of love, forgiveness, and meaning in the San Fernando Valley.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="rushhour" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex text-center justify-content-center flex-column">
+      <h2>Rush hour 3 2007 movie</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/FRDRWXfQyJE?rel=0" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe>
+      <br>
+      <p>After an attempted assassination on Ambassador Han, Lee and Carter head to Paris to protect a French woman with knowledge of the Triads' secret leaders.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  </section>
+
+  <!-- End modal -->
+
+
+</body>
+<script src="main.js"></script>	
+</html>
+
